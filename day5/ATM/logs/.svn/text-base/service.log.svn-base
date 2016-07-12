@@ -1,0 +1,17 @@
+2016-06-09 17:26:05,937 DEBUG 1284 7952 public.py-write_log:78 Thu Jun  9 17:26:05 2016 jerry 查看自己的用户信息
+2016-06-09 17:36:45,943 DEBUG 9676 3656 public.py-write_log:78 Thu Jun  9 17:36:45 2016 jerry 查看自己的用户信息
+2016-06-09 17:37:03,775 DEBUG 9676 3656 public.py-write_log:78 Thu Jun  9 17:37:03 2016 jerry [还款]还款1050.00元
+2016-06-09 17:37:53,402 DEBUG 9676 3656 public.py-write_log:78 Thu Jun  9 17:37:53 2016 jerry [提现]提取1000.00现金成功
+2016-06-09 17:37:57,679 DEBUG 9676 3656 public.py-write_log:78 Thu Jun  9 17:37:57 2016 jerry 查看自己的用户信息
+2016-06-09 21:59:06,874 DEBUG 5544 6528 public.py-write_log:78 Thu Jun  9 21:59:06 2016 jerry [查看]查看自己的用户信息
+2016-06-17 15:19:37,380 DEBUG 7960 10604 public.py-write_log:78 Fri Jun 17 15:19:37 2016 jerry [查看]查看自己的用户信息
+2016-06-17 15:22:55,416 DEBUG 7960 10604 public.py-write_log:78 Fri Jun 17 15:22:55 2016 jerry [查看]查看自己的用户信息
+2016-06-17 15:31:49,123 DEBUG 7960 10604 public.py-write_log:78 Fri Jun 17 15:31:49 2016 jerry [查看]查看自己的用户信息
+2016-06-17 15:32:11,652 DEBUG 3944 10280 public.py-write_log:78 Fri Jun 17 15:32:11 2016 jerry [查看]查看自己的用户信息
+2016-06-17 15:34:59,611 DEBUG 3944 10280 public.py-write_log:78 Fri Jun 17 15:34:59 2016 jerry [查看]查看自己的用户信息
+2016-06-17 15:35:24,126 DEBUG 10916 9808 public.py-write_log:78 Fri Jun 17 15:35:24 2016 jerry [查看]查看自己的用户信息
+2016-06-17 15:51:29,707 DEBUG 9048 6720 public.py-write_log:78 Fri Jun 17 15:51:29 2016 jerry [查看]查看自己的用户信息
+2016-06-17 15:51:49,319 DEBUG 7804 7596 public.py-write_log:78 Fri Jun 17 15:51:49 2016 jerry [查看]查看自己的用户信息
+2016-06-17 15:53:01,948 DEBUG 7132 2304 public.py-write_log:78 Fri Jun 17 15:53:01 2016 jerry [查看]查看自己的用户信息
+2016-06-17 16:18:01,809 DEBUG 8988 4456 public.py-write_log:78 Fri Jun 17 16:18:01 2016 jack [查看]查看自己的用户信息
+2016-06-21 10:05:02,220 DEBUG 11656 6556 public.py-write_log:78 Tue Jun 21 10:05:02 2016 tom [查看]查看自己的用户信息

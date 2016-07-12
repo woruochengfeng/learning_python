@@ -1,0 +1,31 @@
+一、此程序为python开发第七天程序 ，主要练习面向对象的编程方法。
+二、本次课讲了两部分内容一部分是补充的模块的知识，第二部分是讲的面向对象的一些基础知识
+模块增加了一部分内容：http://www.cnblogs.com/zhangxunan/p/5568050.html
+面向对象：http://www.cnblogs.com/zhangxunan/p/5606968.html
+三、目录结构
+     |--- choice_class.py 
+day7-|--- choice_class.png
+     |--- README
+四、程序基本概况
+1、Teacher类
+属性：性名，年龄，爱好，资产
+方法：
+teach_event()教学事故，会减钱
+attend_class_fee()上课费，老师上一节课多少钱
+show_info()显示创建老师的信息
+show_assets()显示老师的资产
+2. Course类（课程类）
+属性：课程名，课时费，任课老师(老师对象)
+方法：
+attend_class()上课，老师资产增加，返回给学生学习内容
+show_info()显示创建课程情况
+3.Admin类
+方法：
+create_teacher()创建老师
+create_course()创建课程
+4.学生类
+属性：姓名，选的课(课程对象)
+方法：
+attend_class()上课，老师资产增加，返回给学生学习内容
+
+五、如有任何问题或bugs，请发邮件到zhangxunan5233@163.com或加QQ：1519542593

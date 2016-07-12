@@ -1,0 +1,6 @@
+[db]
+user_db_name = shop_user.db
+shopping_records = shopping_records.txt
+shopping_cart = shopping_cart.txt
+[log]
+log_path = logs

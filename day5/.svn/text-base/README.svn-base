@@ -1,0 +1,113 @@
+一、此程序为python运维开发第５天程序，主要练习模块，包的使用。
+二、我的博客地址分４篇。
+1.模块增加了一些新内容，地址为：http://www.cnblogs.com/zhangxunan/p/5568050.html
+2.正则表达式：http://www.cnblogs.com/zhangxunan/p/5577615.html
+3.反射：http://www.cnblogs.com/zhangxunan/p/5578451.html
+4.算法：http://www.cnblogs.com/zhangxunan/p/5578454.html
+三、程序目录结构
+day5
+├── ATM     　信用卡程序
+│   ├── api　　
+│   │   ├── common_api.py　　　绑定银行卡，付款接口
+│   │   └── __init__.py
+│   ├── bin
+│   │   ├── atm.py　　　　　　　入口文件
+│   │   └── __init__.py
+│   ├── conf
+│   │   └── atm.conf　　　　　 配置文件
+│   ├── core
+│   │   ├── credit.py        程序主文件
+│   │   ├── db.py　　　　　　　操作文件
+│   │   ├── init_db.py　　　　初始化用户信息
+│   │   ├── __init__.py
+│   │   ├── manage.py　　　　管理员功能文件
+│   │   └── public.py　　　　公共文件，包括读取配置文件，写日志功能。
+│   ├── db
+│   │   ├── admin.db　　　　 存管理员用户信息
+│   │   └── user.db　　　　  存普通用户信息
+│   └── logs
+│       ├── record.log　　　 用户操作日志文件
+│       └── service.log     程序错误日志文件
+├── ATM.png　　　　　　　　　  ATM的流程图
+├── README                  读我
+├── SHOPPING               　商城
+│   ├── bin
+│   │   ├── __init__.py
+│   │   └── shoppingmall.py　入口文件
+│   ├── conf
+│   │   └── shopping.conf　　配置文件
+│   ├── core
+│   │   ├── init_goods.py　　初始化商城用户信息
+│   │   ├── __init__.py
+│   │   ├── public.py　　　　公共文件，包括读取配置文件，写日志功能。
+│   │   ├── shop_db.py　　　　操作文件
+│   │   └── shopping.py　　　主程序
+│   ├── db
+│   │   ├── shopping_cart.txt　　保存用户购物车信息
+│   │   ├── shopping_records.txt　保存用户购物记录
+│   │   └── shop_user.db　　　　　　保存用户信息
+│   └── logs
+│       ├── record.log　　　　　用户操作日志文件
+│       └── service.log　　　　　程序错误日志文件
+└── SHOPPING.png　　　　　　　　商城流程图
+
+　　
+四、程序用到的知识点：模块，列表，字典，元组，文件，函数
+五、运行程序注意事项
+ATM:
+1.ATM程序是用卡号密码登录的，为了简单，将卡号设置为６位，管理员是用用户名密码登录的
+622622, 622623, 622624　这三个卡号能用，密码都是123456
+管理员账号是:admin ,密码是：123456
+SHOPPING:
+1.是用用户名密码登录的，可以注册
+tom,jerry,jack这三个用户名可以使用,密码都是123456　
+
+六、程序功能
+ATM：
+分三部分
+管理员：
+管理员主要功能都在manage.py文件里。
+1. 添加用户功能，函数为user_add(),会调用db.py里的get_user_info()函数首先读取文件将用户信息存到字典里，然后将管理员输入的信息添加到字典里，然后再调用update_user_info()将更新后的字典写到文件里。
+2. 注销账户功能，函数为close_account()，如果用户还有欠款的时候是不能注销用户的，只有还清才可以注销。
+3. 冻结账户功能，函数为frozen_account(),冻结之后账户不能登录。
+4. 信用额度，函数为credit_lines()，注意，这个功能是增加到多少额度，直接输入增加后的值。这个值必须大于０，小于100000。
+
+普通用户部分：
+1.登录功能，函数为login()，此功能为管理员和普通用户共用的功能，通过传入不同的参数，来区分是普通用户还是管理员
+2.显示用户信息功能，函数为show_info()，普通用户会显示自己的基本信息
+3.转账功能，函数为transfers(),转账只是转最高额度的50%+自己的余额
+4.提现功能，函数为cash_advance()，提现也是只能提自己最高信用额度的50%+余额
+5.还款功能，函数为repayment(),如果还款额度超过欠款，将会存到余额里。
+６.打印账单功能，函数为bill()，每个月22号出账单，其它日期不出，出这个月22号到上个月22号的账单。
+7.过期未还计息功能，函数为overdue(),过期未还按每天万分之五计息。
+
+API：
+文件为common_api.py
+1.绑定信用卡功能，函数为credit_bind()商城用户绑定信用卡的时候会调用这个接口，反会Ｔrue,Ｆalse来判断是否绑定成功。
+2.结账功能，函数为checkout()商城用户会调用此接口结账。
+
+公共部分:public.py db.py
+1.读取配置文件功能，get_config()获取配置文件，并将配置文件读到字典里
+2.设置日志功能，set_logging(),会设置日志文件名，日志格式，日志切割等。
+3.写日志功能，write_log()会将用户操作信息写到日志文件里。
+
+
+SHOPPING:
+主要功能：shopping.py
+1.登录功能，函数为login(),用户登录之后会将用户信息存到全局变量USER_INFO={}里，也是先将用户信息用get_user_info()读到字典里，然后判断用户是否在字典里。
+2.注册功能，函数为register()，先将用户信息用get_user_info()读到字典里，然后将用户注册信息更新到字典里，然后用update_user_info()写回文件里。
+3.购物车功能，shopping_cart()用户选择商品后会将商品添加到购物车里。
+4.购物功能,shopping()此功能是用户选择商品和数量，然后调用shopping_cart()将选择的商品添加到购物车里。
+5.绑定银行卡功能，函数为credit_bind()，此功能会调用ATM的credit_bind()接口，完成绑定，不绑定是没法付款的。
+6.结账功能，函数为checkout()，此函数会调用ATM的checkout()接口，完成付款。此功能在购物车功能里会调用结账。
+7.显示购物历史记录功能，read_shopping_history()会显示用户购物历史记录。
+８.记录用户购物历史记录功能，write_shopping_history()会将已经付款的购物信息存到文件里。
+
+公共部分：
+public.py,shop_db.py
+
+1.public.py功能和ATM的public.py功能完全相同，不在重述。
+2.shop_db.py主要是文件操作相关。
+
+七、如果有任何问题，请发邮件到zhangxunan5233@163.com 或加QQ:1519542593
+

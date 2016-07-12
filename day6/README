@@ -1,0 +1,14 @@
+一、此程序主要是练习正则表达式，python RE模块。我的博客地址是http://www.cnblogs.com/zhangxunan/p/5577615.html
+二、目录结构
+      |-- calc.py 
+day6--|-- calc.png
+      |-- README
+
+三、程序用到的知识点正则表达式RE模块
+四、程序的几个函数：
+remove_brackets(exp),将表达式去括号，用到递归，当去完括号之后函数结束
+calculation(exp) 将最后的计算结果返回
+mul_div(exp)计算乘除
+add_sub(exp)计算加减
+
+五、如果有任何问题，请发邮件到zhangxunan5233@163.com或QQ：1519542593
